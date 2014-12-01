@@ -20,12 +20,13 @@ function getRandomInt (min, max) {
 }
 
 function hasard(){
-    var truc = getRandomInt (1, 5);
+    var truc = getRandomInt (1, 6);
     if (truc==1){montruc1();}
     else if (truc==2){montruc2();}
     else if (truc==3){montruc3();}
     else if (truc==4){montruc4();}
     else if (truc==5){montruc5();}
+    else if (truc==6){montruc6();}
 }
 
 function getRandomColor() {
@@ -100,7 +101,7 @@ function montruc4() {
 
 function montruc5() {
     var txt = document.createElement("INPUT");
-    txt.setAttribute("type", "textarea");
+    txt.setAttribute("type", "text");
     txt.value = "texte";
     txt.style = "width:120px;";
     txt.style.position = "absolute";
@@ -108,6 +109,17 @@ function montruc5() {
     txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(txt);
 }
+
+function montruc6() {
+    var txt = document.createElement("TEXTAREA");
+    txt.value = "histoire";
+    txt.style = "width:120px;";
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+}
+
     </script>
   </body>
 </html>
