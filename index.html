@@ -20,13 +20,14 @@ function getRandomInt (min, max) {
 }
 
 function hasard(){
-    var truc = getRandomInt (1, 6);
+    var truc = getRandomInt (1, 7);
     if (truc==1){montruc1();}
     else if (truc==2){montruc2();}
     else if (truc==3){montruc3();}
     else if (truc==4){montruc4();}
     else if (truc==5){montruc5();}
     else if (truc==6){montruc6();}
+    else if (truc==7){montruc7();}
 }
 
 function getRandomColor() {
@@ -120,11 +121,16 @@ function input_marquee() {
         marquee_element = document.createElement("MARQUEE");
         marquee_element.id = 'marquee-' + this.marquee_id;
         marquee_element.style.position = "absolute";
-        marquee_element.style.left = getRandomInt(10, fenetrex-500) + 'px';
-        marquee_element.style.top = getRandomInt(40, fenetrey-50) + 'px';
-        marquee_element.style.width = '500px';
-        if (getRandomInt(0, 1)) {
-            marquee_element.direction = 'right';
+        marquee_element.style.left = getRandomInt(10, fenetrex-300) + 'px';
+        marquee_element.style.top = getRandomInt(40, fenetrey-300) + 'px';
+        marquee_element.style.width = '300px';
+        marquee_element.style['z-index'] = -1000;
+        marquee_element.style.height = '300px';
+        var direction_random = getRandomInt(1, 3);
+        switch (direction_random) {
+            case 1: marquee_element.direction = 'right'; break;
+            case 2: marquee_element.direction = 'left'; break;
+            case 3: marquee_element.direction = 'bottom'; break;
         }
         var marquee_transform = 'rotate('+getRandomInt(-10, 10)+'deg)';
         marquee_element.style.transform = marquee_transform;
@@ -155,6 +161,16 @@ function montruc5() {
 function montruc6() {
     var txt = document.createElement("TEXTAREA");
     txt.value = "histoire";
+    txt.style = "width:120px;";
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+}
+
+function montruc7() {
+    var txt = document.createElement("INPUT");
+    txt.type = "file";
     txt.style = "width:120px;";
     txt.style.position = "absolute";
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
