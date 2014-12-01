@@ -20,7 +20,7 @@ function getRandomInt (min, max) {
 }
 
 function hasard(){
-    var truc = getRandomInt (1, 8);
+    var truc = getRandomInt (1, 10);
     if (truc==1){montruc1();}
     else if (truc==2){montruc2();}
     else if (truc==3){montruc3();}
@@ -29,6 +29,8 @@ function hasard(){
     else if (truc==6){montruc6();}
     else if (truc==7){montruc7();}
     else if (truc==8){montruc8();}
+    else if (truc==9){montruc9();}
+    else if (truc==10){montruc10();}
 }
 
 function getRandomColor() {
@@ -186,6 +188,30 @@ function montruc8() {
     txt.max = 500;
     txt.step = 50;
     txt.value = getRandomInt(100, 400);
+    txt.style = "width:120px;";
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+}
+
+function montruc9() {
+    var txt = document.createElement("METER");
+    txt.min = 0;
+    txt.max = 100;
+    txt.value = getRandomInt(10, 40);
+    txt.style = "width:120px;";
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+}
+
+function montruc10() {
+    var txt = document.createElement("PROGRESS");
+    txt.min = 0;
+    txt.max = 100;
+    txt.value = getRandomInt(10, 40);
     txt.style = "width:120px;";
     txt.style.position = "absolute";
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
