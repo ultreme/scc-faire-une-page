@@ -20,7 +20,7 @@ function getRandomInt (min, max) {
 }
 
 function hasard(){
-    var truc = getRandomInt (1, 7);
+    var truc = getRandomInt (1, 8);
     if (truc==1){montruc1();}
     else if (truc==2){montruc2();}
     else if (truc==3){montruc3();}
@@ -28,6 +28,7 @@ function hasard(){
     else if (truc==5){montruc5();}
     else if (truc==6){montruc6();}
     else if (truc==7){montruc7();}
+    else if (truc==8){montruc8();}
 }
 
 function getRandomColor() {
@@ -171,6 +172,20 @@ function montruc6() {
 function montruc7() {
     var txt = document.createElement("INPUT");
     txt.type = "file";
+    txt.style = "width:120px;";
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+}
+
+function montruc8() {
+    var txt = document.createElement("INPUT");
+    txt.type = "range";
+    txt.min = 0;
+    txt.max = 500;
+    txt.step = 50;
+    txt.value = getRandomInt(100, 400);
     txt.style = "width:120px;";
     txt.style.position = "absolute";
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
