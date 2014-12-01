@@ -123,6 +123,9 @@ function input_marquee() {
         marquee_element.style.left = getRandomInt(10, fenetrex-500) + 'px';
         marquee_element.style.top = getRandomInt(40, fenetrey-50) + 'px';
         marquee_element.style.width = '500px';
+        if (getRandomInt(0, 1)) {
+            marquee_element.direction = 'right';
+        }
         var marquee_transform = 'rotate('+getRandomInt(-10, 10)+'deg)';
         marquee_element.style.transform = marquee_transform;
         marquee_element.style['-webkit-transform'] = marquee_transform;
