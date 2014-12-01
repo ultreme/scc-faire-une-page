@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+div.jazz {position: absolute; left: 240px; top: 60px;}
+</style>
+</head>
+<body>
+
+<div class="jazz"> 
+<p>créer des pages web en quelques clics :</p>
+
+<button onclick="hasard()">Bouton</button>
+
+</div>
+
+<script type="text/javascript">
+
+var fenetrex = window.innerWidth;
+var fenetrey = window.innerHeight;
+
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+
+function hasard(){
+	var truc = getRandomInt (1, 5);
+	if (truc==1){montruc1();}
+	else if (truc==2){montruc2();}
+	else if (truc==3){montruc3();}
+	else if (truc==4){montruc4();}
+	else if (truc==5){montruc5();}
+}	
+
+function montruc1() {
+    var rad = document.createElement("INPUT");
+    rad.setAttribute("type", "radio");
+	rad.style.position = "absolute";
+	rad.style.left = getRandomInt (10, fenetrex-50) + 'px';
+	rad.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(rad);
+}
+
+function montruc2() {
+    var but = document.createElement("INPUT");
+    but.setAttribute("type", "button");
+	but.style = "width:50px"
+	but.style.position = "absolute";
+	but.style.left = getRandomInt (10, fenetrex-50) + 'px';
+	but.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(but);
+}
+
+function montruc3() {
+    var che = document.createElement("INPUT");
+    che.setAttribute("type", "checkbox");
+	che.style.position = "absolute";
+	che.style.left = getRandomInt (10, fenetrex-50) + 'px';
+	che.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(che);
+}
+
+function montruc4() {
+    var pass = document.createElement("INPUT");
+    pass.setAttribute("type", "password");
+	pass.value = "blabll";
+	pass.style= "width:70px";
+	pass.style.position = "absolute";
+	pass.style.left = getRandomInt (10, fenetrex-50) + 'px';
+	pass.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(pass);
+}
+
+function montruc5() {
+    var txt = document.createElement("INPUT");
+    txt.setAttribute("type", "textarea");
+	txt.value = "texte";
+	txt.style = "width:120px;";
+	txt.style.position = "absolute";
+	txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+	txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+}
+
+
+</script>
+
+</body>
+</html>
