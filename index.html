@@ -224,8 +224,24 @@ function montruc10() {
 function montruc11() {
     var txt = document.createElement("AUDIO");
     txt.autoplay = true;
-    txt.loop = false;
+    txt.loop = true;
     txt.controls = true;
+    var zik_random = getRandomInt(1, 3);
+    var zik_name;
+    switch (zik_random) {
+        case 1: zik_name = 'coolman'; break;
+        case 2: zik_name = 'soloman'; break;
+        case 3: zik_name = 'drumman'; break;
+    }
+    var source= document.createElement('source');
+    if (txt.canPlayType('audio/mpeg;')) {
+        source.type= 'audio/mpeg';
+        source.src= zik_name + '.mp3';
+    } else {
+        source.type= 'audio/ogg';
+        source.src= zik_name + '.ogg';
+    }
+    txt.appendChild(source);
     txt.style = "width:120px;";
     txt.style.position = "absolute";
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
