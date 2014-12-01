@@ -142,7 +142,7 @@ function input_marquee() {
         marquee_element.style['-webkit-transform'] = marquee_transform;
         document.body.appendChild(marquee_element);
     }
-    if (this.value != "texte") {
+    if (this.value != "invisible") {
         marquee_element.innerHTML = this.value;
     } else {
         marquee_element.innerHTML = "";
@@ -160,7 +160,7 @@ function montruc5() {
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
     txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(txt);
-
+    txt.onkeyup();
 }
 
 function montruc6() {
