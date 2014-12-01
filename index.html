@@ -7,7 +7,7 @@ div.jazz {position: absolute; left: 240px; top: 60px;}
 </head>
 <body>
 
-<div class="jazz"> 
+<div class="jazz">
 <p>créer des pages web en quelques clics :</p>
 
 <button onclick="hasard()">Bouton</button>
@@ -21,64 +21,91 @@ var fenetrey = window.innerHeight;
 
 function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
-	}
+}
+
+/*
+.barrel_roll {
+    -webkit-transition: -webkit-transform 4s ease;
+    -webkit-transform: rotate(360deg);
+    -moz-transition: -moz-transform 4s ease;
+    -moz-transform: rotate(360deg);
+    -o-transition: -o-transform 4s ease;
+    -o-transform: rotate(360deg);
+    transition: transform 4s ease;
+    transform: rotate(360deg);
+}
+*/
 
 function hasard(){
-	var truc = getRandomInt (1, 5);
-	if (truc==1){montruc1();}
-	else if (truc==2){montruc2();}
-	else if (truc==3){montruc3();}
-	else if (truc==4){montruc4();}
-	else if (truc==5){montruc5();}
-}	
+    var truc = getRandomInt (1, 5);
+    if (truc==1){montruc1();}
+    else if (truc==2){montruc2();}
+    else if (truc==3){montruc3();}
+    else if (truc==4){montruc4();}
+    else if (truc==5){montruc5();}
+}
 
 function montruc1() {
     var rad = document.createElement("INPUT");
     rad.setAttribute("type", "radio");
-	rad.style.position = "absolute";
-	rad.style.left = getRandomInt (10, fenetrex-50) + 'px';
-	rad.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    rad.style.position = "absolute";
+    rad.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    rad.style.top = getRandomInt (40, fenetrey-50) + 'px';
+
     document.body.appendChild(rad);
+}
+
+function rotate_page() {
+    var deg = this.deg;
+    var css = 'rotate('+deg+'deg)';
+    if (document.body.style.transform == css) {
+        css = 'rotate(0deg)';
+    }
+    document.body.style.transform = css;
+    document.body.style['-webkit-transform'] = css;
 }
 
 function montruc2() {
     var but = document.createElement("INPUT");
     but.setAttribute("type", "button");
-	but.style = "width:50px"
-	but.style.position = "absolute";
-	but.style.left = getRandomInt (10, fenetrex-50) + 'px';
-	but.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    but.style = "width:50px"
+    but.style.position = "absolute";
+    but.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    but.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(but);
+    but.deg = getRandomInt(-10, 10);
+    if (but.deg == 0) { but.deg = 3; }
+    but.onclick = rotate_page;
 }
 
 function montruc3() {
     var che = document.createElement("INPUT");
     che.setAttribute("type", "checkbox");
-	che.style.position = "absolute";
-	che.style.left = getRandomInt (10, fenetrex-50) + 'px';
-	che.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    che.style.position = "absolute";
+    che.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    che.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(che);
 }
 
 function montruc4() {
     var pass = document.createElement("INPUT");
     pass.setAttribute("type", "password");
-	pass.value = "blabll";
-	pass.style= "width:70px";
-	pass.style.position = "absolute";
-	pass.style.left = getRandomInt (10, fenetrex-50) + 'px';
-	pass.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    pass.value = "blabll";
+    pass.style= "width:70px";
+    pass.style.position = "absolute";
+    pass.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    pass.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(pass);
 }
 
 function montruc5() {
     var txt = document.createElement("INPUT");
     txt.setAttribute("type", "textarea");
-	txt.value = "texte";
-	txt.style = "width:120px;";
-	txt.style.position = "absolute";
-	txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
-	txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    txt.value = "texte";
+    txt.style = "width:120px;";
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(txt);
 }
 
