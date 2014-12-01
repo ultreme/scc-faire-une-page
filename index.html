@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style type="text/css">
-div.jazz {position: absolute; left: 240px; top: 60px;}
-</style>
-</head>
-<body>
-
-<div class="jazz">
-<p>créer des pages web en quelques clics :</p>
-
-<button onclick="hasard()">Bouton</button>
-
-</div>
-
-<script type="text/javascript">
-
+  <head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      div.jazz {position: absolute; left: 240px; top: 60px;}
+    </style>
+  </head>
+  <body>
+    <div class="jazz">
+      <p>crÃ©er des pages web en quelques clics :</p>
+      <button onclick="hasard()">Bouton</button>
+    </div>
+    <script type="text/javascript">
 var fenetrex = window.innerWidth;
 var fenetrey = window.innerHeight;
 
 function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-/*
-.barrel_roll {
-    -webkit-transition: -webkit-transform 4s ease;
-    -webkit-transform: rotate(360deg);
-    -moz-transition: -moz-transform 4s ease;
-    -moz-transform: rotate(360deg);
-    -o-transition: -o-transform 4s ease;
-    -o-transform: rotate(360deg);
-    transition: transform 4s ease;
-    transform: rotate(360deg);
-}
-*/
 
 function hasard(){
     var truc = getRandomInt (1, 5);
@@ -108,9 +91,6 @@ function montruc5() {
     txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(txt);
 }
-
-
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
