@@ -28,13 +28,30 @@ function hasard(){
     else if (truc==5){montruc5();}
 }
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function couleur_page() {
+    document.body.style['background-color'] = this.couleur;
+    document.body.style.color = this.couleur2;
+}
+
 function montruc1() {
     var rad = document.createElement("INPUT");
     rad.setAttribute("type", "radio");
     rad.style.position = "absolute";
+    rad.name = 'couleur';
     rad.style.left = getRandomInt (10, fenetrex-50) + 'px';
     rad.style.top = getRandomInt (40, fenetrey-50) + 'px';
-
+    rad.couleur = getRandomColor();
+    rad.couleur2 = getRandomColor();
+    rad.onclick = couleur_page;
     document.body.appendChild(rad);
 }
 
