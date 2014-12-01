@@ -32,6 +32,7 @@ function hasard(){
     else if (truc==9){montruc9();}
     else if (truc==10){montruc10();}
     else if (truc==11){montruc11();}
+    else if (truc==12){montruc12();}
 }
 
 function getRandomColor() {
@@ -230,6 +231,18 @@ function montruc11() {
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
     txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(txt);
+}
+
+function montruc12() {
+    var txt = document.createElement("IFRAME");
+    txt.class = "frame";
+    txt.style.width = '60px';
+    txt.style.height = '40px';
+    txt.style.position = "absolute";
+    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(txt);
+    txt.contentWindow.document.write("Des<br/>mots<br/>sur<br/>plusieurs<br/>lignes<br/>.");
 }
 
     </script>
