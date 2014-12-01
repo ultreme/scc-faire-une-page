@@ -79,12 +79,27 @@ function montruc2() {
     but.onclick = rotate_page;
 }
 
+function move_object() {
+    if (this.style.left == this.move_left) {
+        this.style.left = this.default_left;
+        this.style.top = this.default_top;
+    } else {
+        this.style.left = this.move_left;
+        this.style.top = this.move_top;
+    }
+}
+
 function montruc3() {
     var che = document.createElement("INPUT");
     che.setAttribute("type", "checkbox");
     che.style.position = "absolute";
-    che.style.left = getRandomInt (10, fenetrex-50) + 'px';
-    che.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    che.default_left = getRandomInt (10, fenetrex-50) + 'px';
+    che.default_top = getRandomInt (40, fenetrey-50) + 'px';
+    che.move_left = getRandomInt (10, fenetrex-50) + 'px';
+    che.move_top = getRandomInt (40, fenetrey-50) + 'px';
+    che.style.left = che.default_left;
+    che.style.top = che.default_top;
+    che.onclick = move_object;
     document.body.appendChild(che);
 }
 
