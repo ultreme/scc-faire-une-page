@@ -114,15 +114,39 @@ function montruc4() {
     document.body.appendChild(pass);
 }
 
+function input_marquee() {
+    var marquee_element = document.getElementById('marquee-' + this.marquee_id);
+    if (!marquee_element) {
+        marquee_element = document.createElement("MARQUEE");
+        marquee_element.id = 'marquee-' + this.marquee_id;
+        marquee_element.style.position = "absolute";
+        marquee_element.style.left = getRandomInt(10, fenetrex-500) + 'px';
+        marquee_element.style.top = getRandomInt(40, fenetrey-50) + 'px';
+        marquee_element.style.width = '500px';
+        var marquee_transform = 'rotate('+getRandomInt(-10, 10)+'deg)';
+        marquee_element.style.transform = marquee_transform;
+        marquee_element.style['-webkit-transform'] = marquee_transform;
+        document.body.appendChild(marquee_element);
+    }
+    if (this.value != "texte") {
+        marquee_element.innerHTML = this.value;
+    } else {
+        marquee_element.innerHTML = "";
+    }
+}
+
 function montruc5() {
     var txt = document.createElement("INPUT");
     txt.setAttribute("type", "text");
     txt.value = "texte";
     txt.style = "width:120px;";
     txt.style.position = "absolute";
+    txt.onkeyup = input_marquee;
+    txt.marquee_id = getRandomInt(42, 1000000);
     txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
     txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(txt);
+
 }
 
 function montruc6() {
