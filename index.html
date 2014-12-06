@@ -212,6 +212,10 @@ function montruc8() {
     range.style.top = getRandomInt (40, fenetrey-50) + 'px';
     range.onchange = function() {
       document.body.style.fontSize = this.value + '%';
+      var images = document.getElementsByTagName("img");
+      for (var i = 0, max = images.length; i < max; i ++) {
+          images[i].style.width = images[i].style.height = (this.value * 1.2) + 'px';
+      }
     };
     document.body.appendChild(range);
 }
