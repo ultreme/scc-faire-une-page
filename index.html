@@ -166,24 +166,24 @@ function montruc5() {
 }
 
 function montruc6() {
-    var txt = document.createElement("TEXTAREA");
-    txt.value = "histoire";
-    txt.style = "width:120px;";
-    txt.style.position = "absolute";
-    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
-    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
-    document.body.appendChild(txt);
+    var textarea = document.createElement("TEXTAREA");
+    textarea.value = "histoire";
+    textarea.style = "width:120px;";
+    textarea.style.position = "absolute";
+    textarea.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    textarea.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(textarea);
 }
 
 function montruc7() {
-    var txt = document.createElement("INPUT");
-    txt.type = "file";
-    txt.style = "width:120px;";
-    txt.style.position = "absolute";
-    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
-    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
-    document.body.appendChild(txt);
-    txt.onchange = function() {
+    var file = document.createElement("INPUT");
+    file.type = "file";
+    file.style = "width:120px;";
+    file.style.position = "absolute";
+    file.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    file.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(file);
+    file.onchange = function() {
         var fr = new FileReader();
         fr.readAsDataURL(this.files[0]);
         fr.onload = function(event) {
@@ -200,24 +200,24 @@ function montruc7() {
 }
 
 function montruc8() {
-    var txt = document.createElement("INPUT");
-    txt.type = "range";
-    txt.min = 0;
-    txt.max = 500;
-    txt.step = 50;
-    txt.value = getRandomInt(100, 400);
-    txt.style = "width:120px;";
-    txt.style.position = "absolute";
-    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
-    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
-    document.body.appendChild(txt);
+    var range = document.createElement("INPUT");
+    range.type = "range";
+    range.min = 0;
+    range.max = 500;
+    range.step = 50;
+    range.value = getRandomInt(100, 400);
+    range.style = "width:120px;";
+    range.style.position = "absolute";
+    range.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    range.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(range);
 }
 
 function montruc9() {
-    var txt = document.createElement("AUDIO");
-    txt.autoplay = true;
-    txt.loop = true;
-    txt.controls = true;
+    var audio = document.createElement("AUDIO");
+    audio.autoplay = true;
+    audio.loop = true;
+    audio.controls = true;
     var zik_random = getRandomInt(1, 3);
     var zik_name;
     switch (zik_random) {
@@ -226,19 +226,19 @@ function montruc9() {
         case 3: zik_name = 'drumman'; break;
     }
     var source= document.createElement('source');
-    if (txt.canPlayType('audio/mpeg;')) {
+    if (audio.canPlayType('audio/mpeg;')) {
         source.type= 'audio/mpeg';
         source.src= zik_name + '.mp3';
     } else {
         source.type= 'audio/ogg';
         source.src= zik_name + '.ogg';
     }
-    txt.appendChild(source);
-    txt.style = "width:120px;";
-    txt.style.position = "absolute";
-    txt.style.left = getRandomInt (10, fenetrex-50) + 'px';
-    txt.style.top = getRandomInt (40, fenetrey-50) + 'px';
-    document.body.appendChild(txt);
+    audio.appendChild(source);
+    audio.style = "width:120px;";
+    audio.style.position = "absolute";
+    audio.style.left = getRandomInt (10, fenetrex-50) + 'px';
+    audio.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    document.body.appendChild(audio);
 }
 
     </script>
