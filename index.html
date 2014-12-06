@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <style type="text/css">
       div.jazz {position: absolute; left: 240px; top: 60px;}
+      body {
+        -webkit-transition-duration: 1s;
+        -moz-transition-duration: 1s;
+        transition-duration: 1s;
+      }
     </style>
   </head>
   <body>
@@ -77,7 +82,7 @@ function montruc2() {
     but.style.left = getRandomInt (10, fenetrex-50) + 'px';
     but.style.top = getRandomInt (40, fenetrey-50) + 'px';
     document.body.appendChild(but);
-    but.deg = getRandomInt(-10, 10);
+    but.deg = getRandomInt(-30, 30);
     if (but.deg == 0) { but.deg = 3; }
     but.onclick = rotate_page;
 }
