@@ -202,14 +202,17 @@ function montruc7() {
 function montruc8() {
     var range = document.createElement("INPUT");
     range.type = "range";
-    range.min = 0;
-    range.max = 500;
-    range.step = 50;
-    range.value = getRandomInt(100, 400);
+    range.min = 70;
+    range.max = 300;
+    range.step = 10;
+    range.value = getRandomInt(90, 120);
     range.style = "width:120px;";
     range.style.position = "absolute";
     range.style.left = getRandomInt (10, fenetrex-50) + 'px';
     range.style.top = getRandomInt (40, fenetrey-50) + 'px';
+    range.onchange = function() {
+      document.body.style.fontSize = this.value + '%';
+    };
     document.body.appendChild(range);
 }
 
